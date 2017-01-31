@@ -1,7 +1,11 @@
 # LowercaseChat
-Chat, that use lowercase characters only.
+##Chat, that use lowercase characters only.
 
-Made with **Unity** and [**GameSparks Framework**](https://gamesparks.com/)
+![login](/readmeimg/1.png)
+![chatroom selection](/readmeimg/2.png)
+![chat](/readmeimg/3.png)
+
+Made with [**Unity**](https://unity3d.com) and [**GameSparks Framework**](https://gamesparks.com/)
 
 It was made as test task in employment.
 
