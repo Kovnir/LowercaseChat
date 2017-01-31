@@ -1,4 +1,4 @@
-# LowercaseChat
+# Lowercase Chat
 ##Chat, that use lowercase characters only.
 
 ![login](/readmeimg/1.png)
@@ -9,14 +9,15 @@ Made with [**Unity**](https://unity3d.com) and [**GameSparks Framework**](https:
 
 It was made as test task in employment.
 
-Chat messages sended all users in current challenge.
-To run source code you must create **challenge "Chat"** (name and short code both) and several events on server side.
+Chat messages are sent to all users in current challenge.
+To run source code you must create **challenge "Chat"** (name and short code must be "Chat") and several events on server side.
 
-### ChatMessage - send message to all users in current challenge.
+## Events
+### ChatMessage - sends message to all users in current challenge.
 
 Attributes:
-* challengeId - id of this challenge (chat room)
-* message - sended message
+* challengeId - id of this challenge (chat room);
+* message - sending message.
 
 Cloud Code:
 ```javascript
@@ -30,10 +31,10 @@ Spark.sendMessageById(json, players);
 ```
 
 
-### GetChatUsers - returned all users in current chat (Challenge)
+### GetChatUsers - gets list of username of all users in current chat (Challenge).
 
 Attributes:
-* ChallengeId - id of this challenge (chat room)
+* ChallengeId - id of this challenge (chat room).
 
 Cloud Code:
 ```javascript
@@ -49,26 +50,8 @@ var json = {"username":result};
 Spark.setScriptData("users", json);
 ```
 
-### GetChatUsers - returned all users in current chat (Challenge)
 
-Attributes:
-* ChallengeId - id of this challenge (chat room)
-
-Cloud Code:
-```javascript
-var challengeId = Spark.getData().ChallengeId;
-var chatUsers = Spark.getChallenge(challengeId).getAcceptedPlayerIds();
-var allPlayerList = Spark.runtimeCollection("playerList");
-var result = [];
-for (var i = 0; i < chatUsers.length; i++) 
-{
-    result.push(allPlayerList.findOne({ "id" : chatUsers[i] }).username); 
-}
-var json = {"username":result};
-Spark.setScriptData("users", json);
-```
-
-### GetUserId - returned userId by username.
+### GetUserId - gets userId by username.
 Attributes:
 * username - name of user.
 
@@ -79,21 +62,9 @@ var playerData = Spark.runtimeCollection("playerList").findOne({ "username" : us
 Spark.setScriptData("id", playerData.id);
 ```
 
-
-### GetUserId - returned userId by username.
-Attributes:
-* username - name of user.
-
-Cloud Code:
-```javascript
-var username = Spark.getData().username;
-var playerData = Spark.runtimeCollection("playerList").findOne({ "username" : username });
-Spark.setScriptData("id", playerData.id);
-```
-
-### LeaveChat - leave chat room.
+### LeaveChat - leaves chat room.
 Attributes 
-ChallengeId - id of this challenge (chat room)
+ChallengeId - id of this challenge (chat room).
 
 Cloud Code:
 ```javascript
@@ -101,7 +72,6 @@ var username = Spark.getData().username;
 var playerData = Spark.runtimeCollection("playerList").findOne({ "username" : username });
 Spark.setScriptData("id", playerData.id);
 ```
-
 
 Also you must override event RegistrationResponse to save names and IDs conformity.
 
