@@ -1,5 +1,5 @@
-# Lowercase Chat
-##Chat, that use lowercase characters only.
+# Lowercase Chat (test task)
+## Chat, that use lowercase characters only.
 
 ![login](/readmeimg/1.png)
 ![chatroom selection](/readmeimg/2.png)
