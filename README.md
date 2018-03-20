@@ -1,4 +1,4 @@
-# Lowercase Chat (test task)
+# Lowercase Chat (test assignment)
 ## Chat, that use lowercase characters only.
 
 ![login](/readmeimg/1.png)
